@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BiteRush | Order Fast. Skip the Queue.</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- BACKGROUND -->
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
+
+    <!-- NAVBAR -->
+    <header class="navbar glass">
+
+        <a href="#" class="logo">
+            <img src="logo.png" alt="BiteRush">
+        </a>
+
+        <nav class="nav-links">
+            <a href="#" class="active">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#popular">Popular</a>
+            <a href="#how-it-works">How it works</a>
+        </nav>
+
+        <div class="nav-right">
+
+            <div class="search-box">
+                <i data-lucide="search"></i>
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search food..."
+                >
+            </div>
+
+            <button class="cart-button" id="cartButton" aria-label="Open cart">
+                <i data-lucide="shopping-cart"></i>
+                <span class="cart-count" id="cartCount">0</span>
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="container">
+
+
+        <!-- HERO SECTION -->
+        <section class="hero glass">
+
+            <div class="hero-content">
+
+                <span class="hero-tag">
+                    <span class="live-dot"></span>
+                    CAMPUS FOOD · NOW SIMPLER
+                </span>
+
+                <h1>
+                    Order Fast.<br>
+                    <span>Skip the Queue.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Cravings don't wait for breaks. Order your favorite
+                    campus food in advance and pick it up when you're ready.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#menu" class="primary-button">
+                        Order Now
+                        <i data-lucide="arrow-up-right"></i>
+                    </a>
+
+                    <a href="#how-it-works" class="secondary-button">
+                        How it works
+                    </a>
+
+                </div>
+
+                <div class="hero-info">
+
+                    <div class="hero-info-item">
+                        <i data-lucide="zap" class="info-icon"></i>
+
+                        <div>
+                            <strong>Quick Ordering</strong>
+                            <small>Less waiting</small>
+                        </div>
+                    </div>
+
+                    <div class="hero-info-item">
+                        <i data-lucide="package-check" class="info-icon"></i>
+
+                        <div>
+                            <strong>Easy Pickup</strong>
+                            <small>Your chosen time</small>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- HERO IMAGE -->
+            <div class="hero-visual">
+
+                <div class="hero-image-container">
+                    <img
+                        src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1200&q=90"
+                        alt="Burger meal"
+                    >
+                </div>
+
+                <div class="floating-glass floating-card">
+
+                    <div class="floating-icon">
+                        <i data-lucide="zap"></i>
+                    </div>
+
+                    <div>
+                        <span>Smart Pre-order</span>
+                        <strong>More food. Less waiting.</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- MENU SECTION -->
+        <section class="section" id="menu">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-subtitle">EXPLORE MENU</span>
+                    <h2>What are you craving?</h2>
+                </div>
+
+                <span class="section-note">
+                    Fresh choices, every day.
+                </span>
+
+            </div>
+
+
+            <!-- CATEGORY FILTERS -->
+            <div class="category-list" id="categoryList">
+
+                <button class="category-card active" data-category="All">
+                    <i data-lucide="utensils"></i>
+                    <span>All Items</span>
+                </button>
+
+                <button class="category-card" data-category="Snacks">
+                    <i data-lucide="popcorn"></i>
+                    <span>Snacks</span>
+                </button>
+
+                <button class="category-card" data-category="Meals">
+                    <i data-lucide="cooking-pot"></i>
+                    <span>Meals</span>
+                </button>
+
+                <button class="category-card" data-category="Drinks">
+                    <i data-lucide="cup-soda"></i>
+                    <span>Drinks</span>
+                </button>
+
+                <button class="category-card" data-category="Fast Food">
+                    <i data-lucide="sandwich"></i>
+                    <span>Fast Food</span>
+                </button>
+
+                <button class="category-card" data-category="South Indian">
+                    <i data-lucide="chef-hat"></i>
+                    <span>South Indian</span>
+                </button>
+
+                <button class="category-card" data-category="Desserts">
+                    <i data-lucide="cake-slice"></i>
+                    <span>Desserts</span>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- POPULAR FOOD -->
+        <section class="section" id="popular">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-subtitle">STUDENT FAVORITES</span>
+                    <h2>Popular Picks</h2>
+                </div>
+
+                <a href="#menu" class="view-all">
+                    View all
+                    <i data-lucide="arrow-up-right"></i>
+                </a>
+
+            </div>
+
+            <div class="food-grid" id="foodGrid"></div>
+
+        </section>
+
+
+        <!-- HOW IT WORKS -->
+        <section class="section" id="how-it-works">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-subtitle">SIMPLE & FAST</span>
+                    <h2>Skip the queue in 3 steps</h2>
+                </div>
+
+            </div>
+
+
+            <div class="steps-grid">
+
+                <div class="step-card glass">
+
+                    <span class="step-number">01</span>
+
+                    <div class="step-icon">
+                        <i data-lucide="utensils"></i>
+                    </div>
+
+                    <h3>Choose your food</h3>
+
+                    <p>
+                        Browse the menu and find what you're craving.
+                    </p>
+
+                </div>
+
+
+                <div class="step-card glass">
+
+                    <span class="step-number">02</span>
+
+                    <div class="step-icon">
+                        <i data-lucide="zap"></i>
+                    </div>
+
+                    <h3>Order in seconds</h3>
+
+                    <p>
+                        Add items to your cart and choose pickup time.
+                    </p>
+
+                </div>
+
+
+                <div class="step-card glass">
+
+                    <span class="step-number">03</span>
+
+                    <div class="step-icon">
+                        <i data-lucide="package-check"></i>
+                    </div>
+
+                    <h3>Pick up your order</h3>
+
+                    <p>
+                        Collect your food without standing in a long queue.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CALL TO ACTION -->
+        <section class="cta-section glass">
+
+            <div>
+                <span class="section-subtitle">YOUR BREAK. YOUR FOOD.</span>
+
+                <h2>Hungry? We've got you.</h2>
+
+                <p>
+                    Place your order now and make your break count.
+                </p>
+            </div>
+
+            <a href="#menu" class="primary-button">
+                Explore Menu
+                <i data-lucide="arrow-up-right"></i>
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <a href="#" class="logo">
+            Bite<span>Rush</span>
+        </a>
+
+        <p>Order fast. Skip the queue.</p>
+
+        <span class="footer-bottom">
+            © 2026 BiteRush · College Canteen Pre-Order System
+        </span>
+
+    </footer>
+
+
+    <!-- =========================
+         FOOD DETAILS MODAL
+    ========================== -->
+
+    <div
+        class="food-modal-overlay"
+        id="foodModalOverlay"
+        aria-hidden="true"
+    >
+
+        <div
+            class="food-modal glass"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modalFoodName"
+        >
+
+            <button
+                class="food-modal-close"
+                id="closeFoodModal"
+                aria-label="Close food details"
+            >
+                <i data-lucide="x"></i>
+            </button>
+
+
+            <!-- MODAL IMAGE -->
+            <div class="food-modal-image-wrap">
+
+                <img
+                    id="modalFoodImage"
+                    src=""
+                    alt=""
+                >
+
+                <span class="food-badge modal-veg-badge">
+                    <span class="veg-dot"></span>
+                    Vegetarian
+                </span>
+
+            </div>
+
+
+            <!-- MODAL DETAILS -->
+            <div class="food-modal-content">
+
+                <span
+                    class="food-modal-category"
+                    id="modalFoodCategory"
+                ></span>
+
+                <h2 id="modalFoodName"></h2>
+
+                <p id="modalFoodDescription"></p>
+
+
+                <div class="food-modal-bottom">
+
+                    <strong
+                        class="food-modal-price"
+                        id="modalFoodPrice"
+                    ></strong>
+
+                    <div class="modal-quantity-controls">
+
+                        <button
+                            id="modalQuantityMinus"
+                            aria-label="Decrease quantity"
+                        >−</button>
+
+                        <span id="modalQuantity">1</span>
+
+                        <button
+                            id="modalQuantityPlus"
+                            aria-label="Increase quantity"
+                        >+</button>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="primary-button modal-add-button"
+                    id="modalAddToCart"
+                >
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         CART DRAWER
+    ========================== -->
+
+    <div class="cart-overlay" id="cartOverlay">
+
+        <div class="cart-drawer glass">
+
+            <div class="cart-header">
+
+                <div>
+                    <span class="section-subtitle">YOUR ORDER</span>
+                    <h2>Shopping Cart</h2>
+                </div>
+
+                <button
+                    class="close-cart"
+                    id="closeCart"
+                    aria-label="Close cart"
+                >
+                    <i data-lucide="x"></i>
+                </button>
+
+            </div>
+
+
+            <!-- CART ITEMS -->
+            <div class="cart-items" id="cartItems"></div>
+
+
+            <!-- CART FOOTER -->
+            <div class="cart-bottom">
+
+                <div class="cart-total-row">
+                    <span>Total Amount</span>
+                    <strong id="cartTotal">₹0</strong>
+                </div>
+
+                <button
+                    class="primary-button checkout-button"
+                    id="checkoutButton"
+                >
+                    Proceed to Order
+                    <i data-lucide="arrow-right"></i>
+                </button>
+
+                <p class="cart-note">
+                    No login required · Pay at the canteen
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ICON LIBRARY -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+</html>
