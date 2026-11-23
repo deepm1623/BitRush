@@ -141,6 +141,7 @@ const cartCount = document.getElementById("cartCount");
 const cartOverlay = document.getElementById("cartOverlay");
 const cartItems = document.getElementById("cartItems");
 const cartTotal = document.getElementById("cartTotal");
+const orderModalOverlay = document.getElementById("orderModalOverlay");
 
 
 // ======================================
@@ -254,6 +255,8 @@ function renderFoods() {
 // ======================================
 
 function renderPopular() {
+    if (!popularGrid) return;
+
     const popularFoods = [1, 3, 4, 5, 7, 8, 14]
         .map(id => foods.find(food => food.id === id))
         .filter(Boolean);
@@ -270,62 +273,14 @@ function renderPopular() {
 // FOOD DETAILS MODAL
 // ======================================
 
-function createFoodModal() {
-    if (document.getElementById("foodModalOverlay")) return;
+function bindFoodModalEvents() {
+    const modal = document.getElementById("foodModalOverlay");
+    if (!modal || modal.dataset.bound === "true") return;
 
-    const modal = document.createElement("div");
-
-    modal.id = "foodModalOverlay";
-    modal.className = "food-modal-overlay";
-
-    modal.innerHTML = `
-        <div class="food-modal glass">
-
-            <button class="food-modal-close" id="foodModalClose">
-                <i data-lucide="x"></i>
-            </button>
-
-            <div class="food-modal-image-wrap">
-                <img id="modalFoodImage" src="" alt="">
-
-                <span class="food-badge modal-veg-badge">
-                    <span class="veg-dot"></span>
-                    Vegetarian
-                </span>
-            </div>
-
-            <div class="food-modal-content">
-
-                <span class="food-modal-category" id="modalFoodCategory"></span>
-
-                <h2 id="modalFoodName"></h2>
-
-                <p id="modalFoodDescription"></p>
-
-                <div class="food-modal-bottom">
-
-                    <span class="food-modal-price" id="modalFoodPrice"></span>
-
-                    <div class="modal-quantity-controls">
-                        <button id="modalQuantityMinus" aria-label="Decrease quantity">−</button>
-                        <span id="modalQuantity">1</span>
-                        <button id="modalQuantityPlus" aria-label="Increase quantity">+</button>
-                    </div>
-
-                </div>
-
-                <button class="primary-button modal-add-button" id="modalAddToCart">
-                    <i data-lucide="shopping-cart"></i>
-                    Add to Cart
-                </button>
-
-            </div>
-        </div>
-    `;
-
-    document.body.appendChild(modal);
-
-    document.getElementById("foodModalClose").addEventListener("click", closeFoodModal);
+    const closeBtn = document.getElementById("closeFoodModal");
+    if (closeBtn) {
+        closeBtn.addEventListener("click", closeFoodModal);
+    }
 
     modal.addEventListener("click", event => {
         if (event.target === modal) {
@@ -349,6 +304,8 @@ function createFoodModal() {
         addToCart(selectedFood.id, modalQuantity);
         closeFoodModal();
     });
+
+    modal.dataset.bound = "true";
 }
 
 
@@ -361,7 +318,7 @@ function openFoodModal(foodId) {
 
     if (!food) return;
 
-    createFoodModal();
+    bindFoodModalEvents();
 
     selectedFood = food;
     modalQuantity = 1;
@@ -378,7 +335,9 @@ function openFoodModal(foodId) {
 
     updateModalQuantity();
 
-    document.getElementById("foodModalOverlay").classList.add("show");
+    const modal = document.getElementById("foodModalOverlay");
+    modal.classList.add("show");
+    modal.setAttribute("aria-hidden", "false");
     document.body.classList.add("modal-open");
 
     refreshIcons();
@@ -395,6 +354,7 @@ function closeFoodModal() {
     if (!modal) return;
 
     modal.classList.remove("show");
+    modal.setAttribute("aria-hidden", "true");
     document.body.classList.remove("modal-open");
 
     selectedFood = null;
@@ -612,6 +572,45 @@ cartOverlay.addEventListener("click", event => {
 
 
 // ======================================
+// ORDER CONFIRMATION POPUP
+// ======================================
+
+function openOrderModal(orderId, items, total) {
+    document.getElementById("confirmOrderId").textContent = `#${orderId}`;
+    document.getElementById("confirmOrderTotal").textContent = `₹${total}`;
+
+    const itemsContainer = document.getElementById("confirmOrderItems");
+    itemsContainer.innerHTML = items.map(item => `
+        <div class="receipt-item-row">
+            <span>${item.quantity} × ${item.name}</span>
+            <span>₹${item.price * item.quantity}</span>
+        </div>
+    `).join("");
+
+    orderModalOverlay.classList.add("show");
+    orderModalOverlay.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-open");
+
+    refreshIcons();
+}
+
+function closeOrderModal() {
+    orderModalOverlay.classList.remove("show");
+    orderModalOverlay.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-open");
+}
+
+document.getElementById("closeOrderModal").addEventListener("click", closeOrderModal);
+document.getElementById("orderDoneButton").addEventListener("click", closeOrderModal);
+
+orderModalOverlay.addEventListener("click", event => {
+    if (event.target === orderModalOverlay) {
+        closeOrderModal();
+    }
+});
+
+
+// ======================================
 // CHECKOUT
 // ======================================
 
@@ -623,25 +622,17 @@ document.getElementById("checkoutButton").addEventListener("click", () => {
     }
 
     const orderId = "BR-" + Math.floor(1000 + Math.random() * 9000);
-
+    const orderedItems = [...cart];
     const total = cart.reduce(
         (sum, item) => sum + item.price * item.quantity,
         0
     );
 
-    alert(
-        "Order placed successfully!\n\n" +
-        "Order ID: " + orderId + "\n" +
-        "Total: ₹" + total + "\n\n" +
-        "Please collect your order at the canteen.\n\n" +
-        "Demo version — backend integration will be added later."
-    );
-
     cart = [];
-
     updateCart();
-
     cartOverlay.classList.remove("show");
+
+    openOrderModal(orderId, orderedItems, total);
 });
 
 
@@ -679,6 +670,7 @@ document.addEventListener("keydown", event => {
 
     if (event.key === "Escape") {
         closeFoodModal();
+        closeOrderModal();
         cartOverlay.classList.remove("show");
     }
 });

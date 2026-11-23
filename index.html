@@ -490,6 +490,78 @@
     </div>
 
 
+    <!-- =========================
+         ORDER CONFIRMATION POPUP
+    ========================== -->
+
+    <div
+        class="order-modal-overlay"
+        id="orderModalOverlay"
+        aria-hidden="true"
+    >
+
+        <div
+            class="order-modal glass"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="orderModalTitle"
+        >
+
+            <button
+                class="order-modal-close"
+                id="closeOrderModal"
+                aria-label="Close order confirmation"
+            >
+                <i data-lucide="x"></i>
+            </button>
+
+            <div class="order-success-badge">
+                <i data-lucide="check-circle-2"></i>
+            </div>
+
+            <span class="section-subtitle">ORDER CONFIRMED</span>
+            <h2 id="orderModalTitle">We're prepping your food!</h2>
+            <p class="order-modal-subtitle">
+                Head to the canteen pickup counter and show your Order ID.
+            </p>
+
+            <div class="order-receipt-card">
+
+                <div class="receipt-row">
+                    <span>Order ID</span>
+                    <strong class="order-id-pill" id="confirmOrderId">#BR-0000</strong>
+                </div>
+
+                <div class="receipt-divider"></div>
+
+                <div class="receipt-items" id="confirmOrderItems"></div>
+
+                <div class="receipt-divider"></div>
+
+                <div class="receipt-row receipt-total">
+                    <span>Amount to Pay at Counter</span>
+                    <strong id="confirmOrderTotal">₹0</strong>
+                </div>
+
+            </div>
+
+            <div class="order-pickup-note">
+                <i data-lucide="clock"></i>
+                <span>Estimated ready time: <strong>10–15 mins</strong></span>
+            </div>
+
+            <button
+                class="primary-button order-done-button"
+                id="orderDoneButton"
+            >
+                Got it, Thanks!
+            </button>
+
+        </div>
+
+    </div>
+
+
     <!-- ICON LIBRARY -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
