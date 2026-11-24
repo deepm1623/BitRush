@@ -46,6 +46,12 @@
                 >
             </div>
 
+            <button class="orders-nav-button" id="myOrdersButton" aria-label="View my orders">
+                <i data-lucide="receipt-text"></i>
+                <span>My Orders</span>
+                <span class="orders-badge" id="activeOrdersCount" style="display: none;">0</span>
+            </button>
+
             <button class="cart-button" id="cartButton" aria-label="Open cart">
                 <i data-lucide="shopping-cart"></i>
                 <span class="cart-count" id="cartCount">0</span>
@@ -519,27 +525,30 @@
                 <i data-lucide="check-circle-2"></i>
             </div>
 
-            <span class="section-subtitle">ORDER CONFIRMED</span>
-            <h2 id="orderModalTitle">We're prepping your food!</h2>
+            <span class="section-subtitle">ORDER PLACED SUCCESSFULLY</span>
+            <h2 id="orderModalTitle">Your Order Number</h2>
+
+            <!-- LARGE ORDER NUMBER DISPLAY -->
+            <div class="order-number-showcase">
+                <strong id="confirmOrderId">#BR-0000</strong>
+                <button class="copy-ticket-btn" id="copyConfirmOrderId" aria-label="Copy Order Number">
+                    <i data-lucide="copy"></i>
+                    <span>Copy</span>
+                </button>
+            </div>
+
             <p class="order-modal-subtitle">
-                Head to the canteen pickup counter and show your Order ID.
+                Show this Order Number at the canteen counter to collect your food.
             </p>
 
             <div class="order-receipt-card">
-
-                <div class="receipt-row">
-                    <span>Order ID</span>
-                    <strong class="order-id-pill" id="confirmOrderId">#BR-0000</strong>
-                </div>
-
-                <div class="receipt-divider"></div>
 
                 <div class="receipt-items" id="confirmOrderItems"></div>
 
                 <div class="receipt-divider"></div>
 
                 <div class="receipt-row receipt-total">
-                    <span>Amount to Pay at Counter</span>
+                    <span>Pay at Counter</span>
                     <strong id="confirmOrderTotal">₹0</strong>
                 </div>
 
@@ -554,11 +563,68 @@
                 class="primary-button order-done-button"
                 id="orderDoneButton"
             >
-                Got it, Thanks!
+                Done
             </button>
 
         </div>
 
+    </div>
+
+
+    <!-- =========================
+         MY ORDERS MODAL (NO LOGIN)
+    ========================== -->
+
+    <div
+        class="order-modal-overlay"
+        id="myOrdersModalOverlay"
+        aria-hidden="true"
+    >
+
+        <div
+            class="order-modal my-orders-modal glass"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="myOrdersTitle"
+        >
+
+            <button
+                class="order-modal-close"
+                id="closeMyOrdersModal"
+                aria-label="Close my orders"
+            >
+                <i data-lucide="x"></i>
+            </button>
+
+            <span class="section-subtitle">NO LOGIN REQUIRED</span>
+            <h2 id="myOrdersTitle">Your Active Orders</h2>
+            <p class="order-modal-subtitle">
+                Saved automatically on this device. Show your Order Number at the counter.
+            </p>
+
+            <div class="saved-orders-list" id="savedOrdersList"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         FLOATING ACTIVE ORDER BAR
+    ========================== -->
+
+    <div class="floating-order-bar glass" id="floatingOrderBar" style="display: none;">
+        <div class="floating-order-info">
+            <span class="live-dot"></span>
+            <div>
+                <small>ACTIVE ORDER NUMBER</small>
+                <strong id="floatingOrderNumber">#BR-0000</strong>
+            </div>
+        </div>
+        <button class="floating-order-view-btn" id="floatingOrderViewBtn">
+            View Details
+            <i data-lucide="chevron-right"></i>
+        </button>
     </div>
 
 

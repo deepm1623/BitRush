@@ -95,15 +95,15 @@ const foods = [
         id: 12,
         name: "Manchurian",
         category: "Fast Food",
-        price: 90,
+        price: 100,
         description: "Spicy vegetable Manchurian tossed in flavorful sauce.",
         image: "assets/Manchurian.jpg"
     },
     {
         id: 13,
         name: "Paneer Wrap",
-        category: "Fast Food",
-        price: 90,
+        category: "Snacks",
+        price: 80,
         description: "Paneer and vegetables wrapped in a soft tortilla.",
         image: "assets/Paneer Wrap.jpg"
     },
@@ -122,7 +122,10 @@ const foods = [
 // APP STATE
 // ======================================
 
+const ORDERS_STORAGE_KEY = "biterush_orders";
+
 let cart = [];
+let savedOrders = JSON.parse(localStorage.getItem(ORDERS_STORAGE_KEY)) || [];
 let selectedCategory = "All";
 let searchText = "";
 
@@ -141,7 +144,12 @@ const cartCount = document.getElementById("cartCount");
 const cartOverlay = document.getElementById("cartOverlay");
 const cartItems = document.getElementById("cartItems");
 const cartTotal = document.getElementById("cartTotal");
+
 const orderModalOverlay = document.getElementById("orderModalOverlay");
+const myOrdersModalOverlay = document.getElementById("myOrdersModalOverlay");
+const activeOrdersCount = document.getElementById("activeOrdersCount");
+const floatingOrderBar = document.getElementById("floatingOrderBar");
+const floatingOrderNumber = document.getElementById("floatingOrderNumber");
 
 
 // ======================================
@@ -545,7 +553,7 @@ document.getElementById("searchInput").addEventListener("input", event => {
 
 
 // ======================================
-// OPEN CART
+// OPEN / CLOSE CART
 // ======================================
 
 document.getElementById("cartButton").addEventListener("click", () => {
@@ -553,17 +561,10 @@ document.getElementById("cartButton").addEventListener("click", () => {
     renderCart();
 });
 
-
-// ======================================
-// CLOSE CART
-// ======================================
-
 document.getElementById("closeCart").addEventListener("click", () => {
     cartOverlay.classList.remove("show");
 });
 
-
-// CLOSE CART OUTSIDE
 cartOverlay.addEventListener("click", event => {
     if (event.target === cartOverlay) {
         cartOverlay.classList.remove("show");
@@ -572,15 +573,33 @@ cartOverlay.addEventListener("click", event => {
 
 
 // ======================================
+// COPY ORDER ID HELPER
+// ======================================
+
+function copyOrderId(orderId) {
+    if (navigator.clipboard) {
+        navigator.clipboard.writeText(orderId).then(() => {
+            showToast(`Copied Order Number: ${orderId}`);
+        });
+    } else {
+        showToast(`Order Number: ${orderId}`);
+    }
+}
+
+
+// ======================================
 // ORDER CONFIRMATION POPUP
 // ======================================
 
-function openOrderModal(orderId, items, total) {
-    document.getElementById("confirmOrderId").textContent = `#${orderId}`;
-    document.getElementById("confirmOrderTotal").textContent = `₹${total}`;
+function openOrderModal(order) {
+    document.getElementById("confirmOrderId").textContent = `#${order.id}`;
+    document.getElementById("confirmOrderTotal").textContent = `₹${order.total}`;
+
+    const copyBtn = document.getElementById("copyConfirmOrderId");
+    copyBtn.onclick = () => copyOrderId(order.id);
 
     const itemsContainer = document.getElementById("confirmOrderItems");
-    itemsContainer.innerHTML = items.map(item => `
+    itemsContainer.innerHTML = order.items.map(item => `
         <div class="receipt-item-row">
             <span>${item.quantity} × ${item.name}</span>
             <span>₹${item.price * item.quantity}</span>
@@ -611,6 +630,108 @@ orderModalOverlay.addEventListener("click", event => {
 
 
 // ======================================
+// MY ORDERS & FLOATING ORDER BAR
+// ======================================
+
+function saveOrdersToStorage() {
+    localStorage.setItem(ORDERS_STORAGE_KEY, JSON.stringify(savedOrders));
+    updateOrdersUI();
+}
+
+function updateOrdersUI() {
+    if (activeOrdersCount) {
+        if (savedOrders.length > 0) {
+            activeOrdersCount.textContent = savedOrders.length;
+            activeOrdersCount.style.display = "grid";
+        } else {
+            activeOrdersCount.style.display = "none";
+        }
+    }
+
+    if (floatingOrderBar && floatingOrderNumber) {
+        if (savedOrders.length > 0) {
+            floatingOrderNumber.textContent = `#${savedOrders[0].id}`;
+            floatingOrderBar.style.display = "flex";
+        } else {
+            floatingOrderBar.style.display = "none";
+        }
+    }
+}
+
+function renderSavedOrders() {
+    const listContainer = document.getElementById("savedOrdersList");
+
+    if (!savedOrders.length) {
+        listContainer.innerHTML = `
+            <div class="empty-orders">
+                <i data-lucide="receipt-text"></i>
+                <h3>No active orders</h3>
+                <p>Once you place an order, your Order Number will appear here automatically.</p>
+            </div>
+        `;
+        refreshIcons();
+        return;
+    }
+
+    listContainer.innerHTML = savedOrders.map(order => `
+        <div class="saved-order-card">
+            <div class="saved-order-top">
+                <button class="order-id-pill copy-order-btn" onclick="copyOrderId('${order.id}')" title="Copy Order ID">
+                    <strong>#${order.id}</strong>
+                    <i data-lucide="copy"></i>
+                </button>
+                <span class="saved-order-time">${order.time}</span>
+            </div>
+
+            <div class="saved-order-items">
+                ${order.items.map(item => `<span>${item.quantity}× ${item.name}</span>`).join(", ")}
+            </div>
+
+            <div class="saved-order-bottom">
+                <strong>Total: ₹${order.total}</strong>
+                <button class="picked-up-btn" onclick="markOrderPickedUp('${order.id}')">
+                    <i data-lucide="check"></i>
+                    Mark Picked Up
+                </button>
+            </div>
+        </div>
+    `).join("");
+
+    refreshIcons();
+}
+
+function markOrderPickedUp(orderId) {
+    savedOrders = savedOrders.filter(order => order.id !== orderId);
+    saveOrdersToStorage();
+    renderSavedOrders();
+    showToast(`Order #${orderId} marked as picked up`);
+}
+
+function openMyOrdersModal() {
+    renderSavedOrders();
+    myOrdersModalOverlay.classList.add("show");
+    myOrdersModalOverlay.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-open");
+}
+
+function closeMyOrdersModal() {
+    myOrdersModalOverlay.classList.remove("show");
+    myOrdersModalOverlay.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-open");
+}
+
+document.getElementById("myOrdersButton").addEventListener("click", openMyOrdersModal);
+document.getElementById("floatingOrderViewBtn").addEventListener("click", openMyOrdersModal);
+document.getElementById("closeMyOrdersModal").addEventListener("click", closeMyOrdersModal);
+
+myOrdersModalOverlay.addEventListener("click", event => {
+    if (event.target === myOrdersModalOverlay) {
+        closeMyOrdersModal();
+    }
+});
+
+
+// ======================================
 // CHECKOUT
 // ======================================
 
@@ -622,17 +743,29 @@ document.getElementById("checkoutButton").addEventListener("click", () => {
     }
 
     const orderId = "BR-" + Math.floor(1000 + Math.random() * 9000);
-    const orderedItems = [...cart];
     const total = cart.reduce(
         (sum, item) => sum + item.price * item.quantity,
         0
     );
 
+    const now = new Date();
+    const formattedTime = now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+
+    const newOrder = {
+        id: orderId,
+        items: [...cart],
+        total,
+        time: formattedTime
+    };
+
+    savedOrders.unshift(newOrder);
+    saveOrdersToStorage();
+
     cart = [];
     updateCart();
     cartOverlay.classList.remove("show");
 
-    openOrderModal(orderId, orderedItems, total);
+    openOrderModal(newOrder);
 });
 
 
@@ -671,6 +804,7 @@ document.addEventListener("keydown", event => {
     if (event.key === "Escape") {
         closeFoodModal();
         closeOrderModal();
+        closeMyOrdersModal();
         cartOverlay.classList.remove("show");
     }
 });
@@ -683,4 +817,5 @@ document.addEventListener("keydown", event => {
 renderFoods();
 renderPopular();
 updateCart();
+updateOrdersUI();
 refreshIcons();
