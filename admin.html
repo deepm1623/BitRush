@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BiteRush Admin | Canteen Dashboard</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+    <!-- BACKGROUND -->
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
+
+    <!-- ADMIN NAVBAR -->
+    <header class="navbar glass">
+
+        <a href="admin.html" class="logo">
+            <img src="logo.png" alt="BiteRush">
+            <span class="admin-pill">CANTEEN ADMIN</span>
+        </a>
+
+        <nav class="nav-links" id="adminTabs">
+            <button class="admin-tab-btn active" data-tab="ordersSection">
+                <i data-lucide="clipboard-list"></i>
+                Incoming Orders
+            </button>
+            <button class="admin-tab-btn" data-tab="menuManageSection">
+                <i data-lucide="utensils-crossed"></i>
+                Menu & Availability
+            </button>
+        </nav>
+
+        <div class="nav-right">
+            <button class="secondary-button admin-refresh-btn" id="refreshAdminBtn" title="Refresh Orders">
+                <i data-lucide="refresh-cw"></i>
+                <span>Refresh</span>
+            </button>
+            <a href="index.html" class="primary-button admin-store-link">
+                <span>Student View</span>
+                <i data-lucide="arrow-up-right"></i>
+            </a>
+        </div>
+
+    </header>
+
+
+    <!-- MAIN ADMIN CONTAINER -->
+    <main class="container admin-container">
+
+        <!-- STATS OVERVIEW -->
+        <section class="admin-stats-grid">
+
+            <div class="stat-card glass">
+                <div class="stat-icon orange">
+                    <i data-lucide="clock"></i>
+                </div>
+                <div>
+                    <span class="stat-label">ACTIVE ORDERS</span>
+                    <strong class="stat-value" id="statActiveOrders">0</strong>
+                </div>
+            </div>
+
+            <div class="stat-card glass">
+                <div class="stat-icon amber">
+                    <i data-lucide="flame"></i>
+                </div>
+                <div>
+                    <span class="stat-label">PREPARING</span>
+                    <strong class="stat-value" id="statPreparingOrders">0</strong>
+                </div>
+            </div>
+
+            <div class="stat-card glass">
+                <div class="stat-icon green">
+                    <i data-lucide="package-check"></i>
+                </div>
+                <div>
+                    <span class="stat-label">READY FOR PICKUP</span>
+                    <strong class="stat-value" id="statReadyOrders">0</strong>
+                </div>
+            </div>
+
+            <div class="stat-card glass">
+                <div class="stat-icon blue">
+                    <i data-lucide="indian-rupee"></i>
+                </div>
+                <div>
+                    <span class="stat-label">TOTAL REVENUE</span>
+                    <strong class="stat-value" id="statTotalRevenue">₹0</strong>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             TAB 1: INCOMING ORDERS
+        ========================== -->
+        <section class="section admin-tab-panel active" id="ordersSection">
+
+            <div class="section-heading">
+                <div>
+                    <span class="section-subtitle">LIVE CANTEEN QUEUE</span>
+                    <h2>Incoming Orders</h2>
+                </div>
+
+                <div class="status-filter-bar" id="orderStatusFilters">
+                    <button class="filter-pill active" data-status="All">All</button>
+                    <button class="filter-pill" data-status="Order Placed">New</button>
+                    <button class="filter-pill" data-status="Accepted">Accepted</button>
+                    <button class="filter-pill" data-status="Preparing">Preparing</button>
+                    <button class="filter-pill" data-status="Ready for Pickup">Ready</button>
+                    <button class="filter-pill" data-status="Completed">Completed</button>
+                </div>
+            </div>
+
+            <div class="admin-orders-grid" id="adminOrdersGrid"></div>
+
+        </section>
+
+
+        <!-- =========================
+             TAB 2: MENU MANAGEMENT
+        ========================== -->
+        <section class="section admin-tab-panel" id="menuManageSection">
+
+            <div class="section-heading">
+                <div>
+                    <span class="section-subtitle">CANTEEN INVENTORY</span>
+                    <h2>Manage Menu & Availability</h2>
+                </div>
+
+                <button class="primary-button" id="openAddFoodModalBtn">
+                    <i data-lucide="plus"></i>
+                    Add New Item
+                </button>
+            </div>
+
+            <div class="admin-menu-grid" id="adminMenuGrid"></div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         ADD / EDIT FOOD POPUP
+    ========================== -->
+    <div class="order-modal-overlay" id="adminFoodModalOverlay" aria-hidden="true">
+
+        <div class="order-modal admin-form-modal glass" role="dialog" aria-modal="true" aria-labelledby="adminFoodModalTitle">
+
+            <button class="order-modal-close" id="closeAdminFoodModal" aria-label="Close modal">
+                <i data-lucide="x"></i>
+            </button>
+
+            <span class="section-subtitle" id="adminFoodModalSubtitle">NEW MENU ITEM</span>
+            <h2 id="adminFoodModalTitle">Add Food Item</h2>
+
+            <form id="adminFoodForm" class="admin-form">
+                <input type="hidden" id="foodFormId">
+
+                <div class="form-group">
+                    <label for="foodFormName">Food Name</label>
+                    <input type="text" id="foodFormName" placeholder="e.g. Paneer Tikka Sandwich" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Category</label>
+                        <!-- CUSTOM CATEGORY DROPDOWN -->
+                        <div class="custom-dropdown" id="categoryCustomDropdown">
+                            <input type="hidden" id="foodFormCategory" value="Snacks">
+                            <button type="button" class="custom-dropdown-trigger" id="categoryDropdownTrigger">
+                                <span id="categoryDropdownLabel">Snacks</span>
+                                <i data-lucide="chevron-down"></i>
+                            </button>
+                            <div class="custom-dropdown-menu" id="categoryDropdownMenu">
+                                <button type="button" class="custom-dropdown-item selected" data-value="Snacks">Snacks</button>
+                                <button type="button" class="custom-dropdown-item" data-value="Fast Food">Fast Food</button>
+                                <button type="button" class="custom-dropdown-item" data-value="South Indian">South Indian</button>
+                                <button type="button" class="custom-dropdown-item" data-value="Drinks">Drinks</button>
+                                <button type="button" class="custom-dropdown-item" data-value="Meals">Meals</button>
+                                <button type="button" class="custom-dropdown-item" data-value="Desserts">Desserts</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="foodFormPrice">Price (₹)</label>
+                        <input type="number" id="foodFormPrice" min="1" placeholder="80" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="foodFormImage">Local Image Path (in assets/)</label>
+                    <input type="text" id="foodFormImage" value="assets/Veg Sandwich.jpg" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="foodFormDescription">Description</label>
+                    <textarea id="foodFormDescription" rows="2" placeholder="Short description of the food item..." required></textarea>
+                </div>
+
+                <div class="admin-modal-actions">
+                    <button type="button" class="secondary-button" id="cancelAdminFoodModal">Cancel</button>
+                    <button type="submit" class="primary-button" id="saveAdminFoodBtn">Save Food Item</button>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         DELETE CONFIRMATION POPUP
+    ========================== -->
+    <div class="order-modal-overlay" id="adminDeleteModalOverlay" aria-hidden="true">
+
+        <div class="order-modal delete-confirm-modal glass" role="dialog" aria-modal="true" aria-labelledby="deleteModalTitle">
+
+            <button class="order-modal-close" id="closeDeleteModal" aria-label="Close delete confirmation">
+                <i data-lucide="x"></i>
+            </button>
+
+            <div class="delete-warning-badge">
+                <i data-lucide="trash-2"></i>
+            </div>
+
+            <span class="section-subtitle">REMOVE ITEM</span>
+            <h2 id="deleteModalTitle">Delete Food Item?</h2>
+            <p class="order-modal-subtitle">
+                Are you sure you want to remove <strong id="deleteTargetName" style="color: var(--white);">this item</strong> from the student menu?
+            </p>
+
+            <div class="admin-modal-actions">
+                <button type="button" class="secondary-button" id="cancelDeleteBtn">Cancel</button>
+                <button type="button" class="danger-button" id="confirmDeleteBtn">
+                    <i data-lucide="trash-2"></i>
+                    Yes, Delete
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <a href="admin.html" class="logo">
+            Bite<span>Rush</span>
+        </a>
+        <p>Canteen Operations & Order Management</p>
+        <span class="footer-bottom">
+            © 2026 BiteRush · Admin Control Panel
+        </span>
+    </footer>
+
+
+    <!-- ICON LIBRARY -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- ADMIN JAVASCRIPT -->
+    <script src="admin.js"></script>
+
+</body>
+</html>
