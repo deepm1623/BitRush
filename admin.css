@@ -1,7 +1,10 @@
+<<<<<<< HEAD
 /* =========================
    BITERUSH ADMIN STYLES
 ========================= */
 
+=======
+>>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 .admin-pill {
     padding: 5px 12px;
     border: 1px solid rgba(249, 115, 22, 0.4);
@@ -53,11 +56,14 @@
     margin-top: 30px;
 }
 
+<<<<<<< HEAD
 
 /* =========================
    STATS GRID
 ========================= */
 
+=======
+>>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 .admin-stats-grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -119,11 +125,14 @@
     letter-spacing: -0.5px;
 }
 
+<<<<<<< HEAD
 
 /* =========================
    TAB PANELS & FILTERS
 ========================= */
 
+=======
+>>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 .admin-tab-panel {
     display: none;
     margin-top: 45px;
@@ -157,11 +166,14 @@
     color: white;
 }
 
+<<<<<<< HEAD
 
 /* =========================
    CUSTOM LIQUID GLASS DROPDOWN
 ========================= */
 
+=======
+>>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 .custom-dropdown {
     position: relative;
     width: 100%;
@@ -258,11 +270,14 @@
     font-weight: 700;
 }
 
+<<<<<<< HEAD
 
 /* =========================
    ADMIN ORDERS GRID
 ========================= */
 
+=======
+>>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 .admin-orders-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -382,11 +397,14 @@
     font-weight: 800;
 }
 
+<<<<<<< HEAD
 
 /* =========================
    ADMIN MENU MANAGEMENT GRID
 ========================= */
 
+=======
+>>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 .admin-menu-grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -522,11 +540,14 @@
     height: 15px;
 }
 
+<<<<<<< HEAD
 
 /* =========================
    ADMIN MODALS (EDIT & DELETE)
 ========================= */
 
+=======
+>>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 .admin-form-modal {
     text-align: left;
     overflow: visible;
@@ -629,11 +650,14 @@
     height: 16px;
 }
 
+<<<<<<< HEAD
 
 /* =========================
    RESPONSIVE
 ========================= */
 
+=======
+>>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 @media (max-width: 1100px) {
     .admin-stats-grid {
         grid-template-columns: repeat(2, 1fr);
