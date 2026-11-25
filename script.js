@@ -1,28 +1,16 @@
-<<<<<<< HEAD
-// ======================================
-// BITERUSH FOOD DATA
-// ======================================
-
-const foods = [
-=======
 const API_BASE_URL = "http://127.0.0.1:5000/api";
 const USE_BACKEND = true;
 
 
 const sampleFoods = [
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
     {
         id: 1,
         name: "Veg Sandwich",
         category: "Snacks",
         price: 60,
         description: "Toasted sandwich with fresh vegetables and cheese.",
-<<<<<<< HEAD
-        image: "assets/Veg Sandwich.jpg"
-=======
         image: "assets/Veg Sandwich.jpg",
         available: true
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
     },
     {
         id: 2,
@@ -30,12 +18,8 @@ const sampleFoods = [
         category: "Snacks",
         price: 70,
         description: "Grilled sandwich filled with delicious melted cheese.",
-<<<<<<< HEAD
-        image: "assets/Cheese Sandwich.jpg"
-=======
         image: "assets/Cheese Sandwich.jpg",
         available: true
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
     },
     {
         id: 3,
@@ -43,12 +27,8 @@ const sampleFoods = [
         category: "Fast Food",
         price: 80,
         description: "Crispy vegetable patty with fresh lettuce.",
-<<<<<<< HEAD
-        image: "assets/Veg Burger.jpg"
-=======
         image: "assets/Veg Burger.jpg",
         available: true
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
     },
     {
         id: 4,
@@ -56,12 +36,8 @@ const sampleFoods = [
         category: "Snacks",
         price: 70,
         description: "Golden crispy fries with delicious seasoning.",
-<<<<<<< HEAD
-        image: "assets/French Fries.jpg"
-=======
         image: "assets/French Fries.jpg",
         available: true
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
     },
     {
         id: 5,
@@ -69,12 +45,8 @@ const sampleFoods = [
         category: "South Indian",
         price: 90,
         description: "Crispy dosa with potato masala and chutney.",
-<<<<<<< HEAD
-        image: "assets/Masala Dosa.jpg"
-=======
         image: "assets/Masala Dosa.jpg",
         available: true
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
     },
     {
         id: 6,
@@ -82,12 +54,8 @@ const sampleFoods = [
         category: "Drinks",
         price: 50,
         description: "Refreshing chilled coffee for your break.",
-<<<<<<< HEAD
-        image: "assets/Cold Coffee.jpg"
-=======
         image: "assets/Cold Coffee.jpg",
         available: true
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
     },
     {
         id: 7,
@@ -95,12 +63,8 @@ const sampleFoods = [
         category: "Fast Food",
         price: 120,
         description: "Loaded with cheese and fresh vegetables.",
-<<<<<<< HEAD
-        image: "assets/Veg Pizza.jpg"
-=======
         image: "assets/Veg Pizza.jpg",
         available: true
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
     },
     {
         id: 8,
@@ -108,12 +72,8 @@ const sampleFoods = [
         category: "Meals",
         price: 110,
         description: "A delicious traditional Gujarati meal.",
-<<<<<<< HEAD
-        image: "assets/Gujarati Thali.jpg"
-=======
         image: "assets/Gujarati Thali.jpg",
         available: true
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
     },
     {
         id: 9,
@@ -121,12 +81,8 @@ const sampleFoods = [
         category: "Desserts",
         price: 65,
         description: "Rich chocolate brownie for your sweet cravings.",
-<<<<<<< HEAD
-        image: "assets/Chocolate Brownie.jpg"
-=======
         image: "assets/Chocolate Brownie.jpg",
         available: true
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
     },
     {
         id: 10,
@@ -134,12 +90,8 @@ const sampleFoods = [
         category: "Snacks",
         price: 50,
         description: "Hot Maggi noodles topped with delicious cheese.",
-<<<<<<< HEAD
-        image: "assets/Cheese Maggi.jpg"
-=======
         image: "assets/Cheese Maggi.jpg",
         available: true
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
     },
     {
         id: 11,
@@ -147,12 +99,8 @@ const sampleFoods = [
         category: "Fast Food",
         price: 90,
         description: "Stir-fried noodles with vegetables and sauces.",
-<<<<<<< HEAD
-        image: "assets/Hakka Noodles.jpg"
-=======
         image: "assets/Hakka Noodles.jpg",
         available: true
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
     },
     {
         id: 12,
@@ -160,12 +108,8 @@ const sampleFoods = [
         category: "Fast Food",
         price: 100,
         description: "Spicy vegetable Manchurian tossed in flavorful sauce.",
-<<<<<<< HEAD
-        image: "assets/Manchurian.jpg"
-=======
         image: "assets/Manchurian.jpg",
         available: true
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
     },
     {
         id: 13,
@@ -173,12 +117,8 @@ const sampleFoods = [
         category: "Snacks",
         price: 80,
         description: "Paneer and vegetables wrapped in a soft tortilla.",
-<<<<<<< HEAD
-        image: "assets/Paneer Wrap.jpg"
-=======
         image: "assets/Paneer Wrap.jpg",
         available: true
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
     },
     {
         id: 14,
@@ -186,24 +126,12 @@ const sampleFoods = [
         category: "Meals",
         price: 100,
         description: "Mumbai-style bhaji served with buttery pav.",
-<<<<<<< HEAD
-        image: "assets/Pav Bhaji.jpg"
-=======
         image: "assets/Pav Bhaji.jpg",
         available: true
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
     }
 ];
 
 
-<<<<<<< HEAD
-// ======================================
-// APP STATE
-// ======================================
-
-const ORDERS_STORAGE_KEY = "biterush_orders";
-
-=======
 const ORDERS_STORAGE_KEY = "biterush_orders";
 const MENU_STORAGE_KEY = "biterush_admin_menu";
 
@@ -222,7 +150,6 @@ function getInitialMenu() {
 }
 
 let foods = getInitialMenu();
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 let cart = [];
 let savedOrders = JSON.parse(localStorage.getItem(ORDERS_STORAGE_KEY)) || [];
 let selectedCategory = "All";
@@ -230,19 +157,10 @@ let searchText = "";
 
 let selectedFood = null;
 let modalQuantity = 1;
-<<<<<<< HEAD
-
-
-// ======================================
-// ELEMENTS
-// ======================================
-
-=======
 let lastMenuSnapshot = localStorage.getItem(MENU_STORAGE_KEY) || "";
 let lastOrdersSnapshot = localStorage.getItem(ORDERS_STORAGE_KEY) || "";
 
 
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 const foodGrid = document.getElementById("foodGrid");
 const popularGrid = document.getElementById("popularGrid");
 
@@ -258,13 +176,6 @@ const floatingOrderBar = document.getElementById("floatingOrderBar");
 const floatingOrderNumber = document.getElementById("floatingOrderNumber");
 
 
-<<<<<<< HEAD
-// ======================================
-// ICON REFRESH
-// ======================================
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 function refreshIcons() {
     if (window.lucide) {
         lucide.createIcons();
@@ -272,13 +183,6 @@ function refreshIcons() {
 }
 
 
-<<<<<<< HEAD
-// ======================================
-// IMAGE FALLBACK
-// ======================================
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 function imageFallback(image) {
     image.onerror = function () {
         this.onerror = null;
@@ -287,15 +191,6 @@ function imageFallback(image) {
 }
 
 
-<<<<<<< HEAD
-// ======================================
-// FOOD CARD
-// ======================================
-
-function createFoodCard(food) {
-    return `
-        <article class="food-card" data-food-id="${food.id}">
-=======
 async function fetchMenuFromBackend() {
     if (!USE_BACKEND) {
         foods = getInitialMenu();
@@ -415,7 +310,6 @@ function createFoodCard(food) {
 
     return `
         <article class="food-card ${!isAvailable ? "unavailable" : ""}" data-food-id="${food.id}">
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 
             <div class="food-image">
                 <img
@@ -425,15 +319,9 @@ function createFoodCard(food) {
                     onerror="imageFallback(this)"
                 >
 
-<<<<<<< HEAD
-                <span class="food-badge">
-                    <span class="veg-dot"></span>
-                    Vegetarian
-=======
                 <span class="food-badge ${!isAvailable ? "sold-out-badge" : ""}">
                     <span class="veg-dot ${!isAvailable ? "out-dot" : ""}"></span>
                     ${isAvailable ? "Vegetarian" : "Sold Out"}
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
                 </span>
             </div>
 
@@ -449,18 +337,11 @@ function createFoodCard(food) {
 
                     <button
                         class="add-button"
-<<<<<<< HEAD
-                        onclick="event.stopPropagation(); addToCart(${food.id})"
-                        aria-label="Add ${food.name} to cart"
-                    >
-                        <i data-lucide="plus"></i>
-=======
                         ${!isAvailable ? "disabled" : ""}
                         onclick="event.stopPropagation(); addToCart(${food.id})"
                         aria-label="${isAvailable ? `Add ${food.name} to cart` : `${food.name} is sold out`}"
                     >
                         <i data-lucide="${isAvailable ? "plus" : "ban"}"></i>
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
                     </button>
 
                 </div>
@@ -470,14 +351,6 @@ function createFoodCard(food) {
     `;
 }
 
-<<<<<<< HEAD
-
-// ======================================
-// RENDER FOOD
-// ======================================
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 function renderFoods() {
     const filteredFoods = foods.filter(food => {
 
@@ -508,14 +381,6 @@ function renderFoods() {
     refreshIcons();
 }
 
-<<<<<<< HEAD
-
-// ======================================
-// RENDER POPULAR FOOD
-// ======================================
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 function renderPopular() {
     if (!popularGrid) return;
 
@@ -530,14 +395,6 @@ function renderPopular() {
     refreshIcons();
 }
 
-<<<<<<< HEAD
-
-// ======================================
-// FOOD DETAILS MODAL
-// ======================================
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 function bindFoodModalEvents() {
     const modal = document.getElementById("foodModalOverlay");
     if (!modal || modal.dataset.bound === "true") return;
@@ -573,27 +430,16 @@ function bindFoodModalEvents() {
     modal.dataset.bound = "true";
 }
 
-<<<<<<< HEAD
-
-// ======================================
-// OPEN FOOD MODAL
-// ======================================
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 function openFoodModal(foodId) {
     const food = foods.find(item => item.id === foodId);
 
     if (!food) return;
 
-<<<<<<< HEAD
-=======
     if (food.available === false) {
         showToast(`${food.name} is currently Sold Out`);
         return;
     }
 
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
     bindFoodModalEvents();
 
     selectedFood = food;
@@ -619,14 +465,6 @@ function openFoodModal(foodId) {
     refreshIcons();
 }
 
-<<<<<<< HEAD
-
-// ======================================
-// CLOSE FOOD MODAL
-// ======================================
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 function closeFoodModal() {
     const modal = document.getElementById("foodModalOverlay");
 
@@ -639,14 +477,6 @@ function closeFoodModal() {
     selectedFood = null;
 }
 
-<<<<<<< HEAD
-
-// ======================================
-// MODAL QUANTITY
-// ======================================
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 function updateModalQuantity() {
     const quantityElement = document.getElementById("modalQuantity");
 
@@ -655,14 +485,6 @@ function updateModalQuantity() {
     }
 }
 
-<<<<<<< HEAD
-
-// ======================================
-// FOOD CARD CLICK
-// ======================================
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 document.addEventListener("click", event => {
     const card = event.target.closest(".food-card");
 
@@ -673,27 +495,16 @@ document.addEventListener("click", event => {
     openFoodModal(foodId);
 });
 
-<<<<<<< HEAD
-
-// ======================================
-// ADD TO CART
-// ======================================
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 function addToCart(foodId, quantity = 1) {
     const food = foods.find(item => item.id === foodId);
 
     if (!food) return;
 
-<<<<<<< HEAD
-=======
     if (food.available === false) {
         showToast(`${food.name} is currently Sold Out`);
         return;
     }
 
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
     const existingItem = cart.find(item => item.id === foodId);
 
     if (existingItem) {
@@ -718,14 +529,6 @@ function addToCart(foodId, quantity = 1) {
     }, 180);
 }
 
-<<<<<<< HEAD
-
-// ======================================
-// UPDATE CART
-// ======================================
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 function updateCart() {
     const totalQuantity = cart.reduce(
         (sum, item) => sum + item.quantity,
@@ -737,14 +540,6 @@ function updateCart() {
     renderCart();
 }
 
-<<<<<<< HEAD
-
-// ======================================
-// RENDER CART
-// ======================================
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 function renderCart() {
     if (!cart.length) {
         cartItems.innerHTML = `
@@ -794,14 +589,6 @@ function renderCart() {
     refreshIcons();
 }
 
-<<<<<<< HEAD
-
-// ======================================
-// CHANGE CART QUANTITY
-// ======================================
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 function changeQuantity(foodId, change) {
     const item = cart.find(item => item.id === foodId);
 
@@ -816,14 +603,6 @@ function changeQuantity(foodId, change) {
     updateCart();
 }
 
-<<<<<<< HEAD
-
-// ======================================
-// CATEGORY FILTER
-// ======================================
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 document.querySelectorAll(".category-card").forEach(button => {
 
     button.addEventListener("click", () => {
@@ -840,28 +619,12 @@ document.querySelectorAll(".category-card").forEach(button => {
     });
 });
 
-<<<<<<< HEAD
-
-// ======================================
-// SEARCH
-// ======================================
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 document.getElementById("searchInput").addEventListener("input", event => {
     searchText = event.target.value.trim();
 
     renderFoods();
 });
 
-<<<<<<< HEAD
-
-// ======================================
-// OPEN / CLOSE CART
-// ======================================
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 document.getElementById("cartButton").addEventListener("click", () => {
     cartOverlay.classList.add("show");
     renderCart();
@@ -877,14 +640,6 @@ cartOverlay.addEventListener("click", event => {
     }
 });
 
-<<<<<<< HEAD
-
-// ======================================
-// COPY ORDER ID HELPER
-// ======================================
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 function copyOrderId(orderId) {
     if (navigator.clipboard) {
         navigator.clipboard.writeText(orderId).then(() => {
@@ -895,14 +650,6 @@ function copyOrderId(orderId) {
     }
 }
 
-<<<<<<< HEAD
-
-// ======================================
-// ORDER CONFIRMATION POPUP
-// ======================================
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 function openOrderModal(order) {
     document.getElementById("confirmOrderId").textContent = `#${order.id}`;
     document.getElementById("confirmOrderTotal").textContent = `₹${order.total}`;
@@ -940,18 +687,6 @@ orderModalOverlay.addEventListener("click", event => {
     }
 });
 
-<<<<<<< HEAD
-
-// ======================================
-// MY ORDERS & FLOATING ORDER BAR
-// ======================================
-
-function saveOrdersToStorage() {
-    localStorage.setItem(ORDERS_STORAGE_KEY, JSON.stringify(savedOrders));
-    updateOrdersUI();
-}
-
-=======
 function saveOrdersToStorage() {
     const serialized = JSON.stringify(savedOrders);
     localStorage.setItem(ORDERS_STORAGE_KEY, serialized);
@@ -969,7 +704,6 @@ function getStatusPillClass(status) {
     }
 }
 
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 function updateOrdersUI() {
     if (activeOrdersCount) {
         if (savedOrders.length > 0) {
@@ -982,9 +716,6 @@ function updateOrdersUI() {
 
     if (floatingOrderBar && floatingOrderNumber) {
         if (savedOrders.length > 0) {
-<<<<<<< HEAD
-            floatingOrderNumber.textContent = `#${savedOrders[0].id}`;
-=======
             const latestOrder = savedOrders[0];
             const currentStatus = latestOrder.status || "Order Placed";
             const smallLabel = floatingOrderBar.querySelector(".floating-order-info small");
@@ -992,7 +723,6 @@ function updateOrdersUI() {
                 smallLabel.textContent = `STATUS: ${currentStatus.toUpperCase()}`;
             }
             floatingOrderNumber.textContent = `#${latestOrder.id}`;
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
             floatingOrderBar.style.display = "flex";
         } else {
             floatingOrderBar.style.display = "none";
@@ -1002,10 +732,7 @@ function updateOrdersUI() {
 
 function renderSavedOrders() {
     const listContainer = document.getElementById("savedOrdersList");
-<<<<<<< HEAD
-=======
     if (!listContainer) return;
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 
     if (!savedOrders.length) {
         listContainer.innerHTML = `
@@ -1019,31 +746,6 @@ function renderSavedOrders() {
         return;
     }
 
-<<<<<<< HEAD
-    listContainer.innerHTML = savedOrders.map(order => `
-        <div class="saved-order-card">
-            <div class="saved-order-top">
-                <button class="order-id-pill copy-order-btn" onclick="copyOrderId('${order.id}')" title="Copy Order ID">
-                    <strong>#${order.id}</strong>
-                    <i data-lucide="copy"></i>
-                </button>
-                <span class="saved-order-time">${order.time}</span>
-            </div>
-
-            <div class="saved-order-items">
-                ${order.items.map(item => `<span>${item.quantity}× ${item.name}</span>`).join(", ")}
-            </div>
-
-            <div class="saved-order-bottom">
-                <strong>Total: ₹${order.total}</strong>
-                <button class="picked-up-btn" onclick="markOrderPickedUp('${order.id}')">
-                    <i data-lucide="check"></i>
-                    Mark Picked Up
-                </button>
-            </div>
-        </div>
-    `).join("");
-=======
     listContainer.innerHTML = savedOrders.map(order => {
         const currentStatus = order.status || "Order Placed";
         const statusClass = getStatusPillClass(currentStatus);
@@ -1075,7 +777,6 @@ function renderSavedOrders() {
             </div>
         `;
     }).join("");
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 
     refreshIcons();
 }
@@ -1087,12 +788,8 @@ function markOrderPickedUp(orderId) {
     showToast(`Order #${orderId} marked as picked up`);
 }
 
-<<<<<<< HEAD
-function openMyOrdersModal() {
-=======
 async function openMyOrdersModal() {
     await syncOrderStatusesFromBackend();
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
     renderSavedOrders();
     myOrdersModalOverlay.classList.add("show");
     myOrdersModalOverlay.setAttribute("aria-hidden", "false");
@@ -1116,59 +813,20 @@ myOrdersModalOverlay.addEventListener("click", event => {
 });
 
 
-<<<<<<< HEAD
-// ======================================
-// CHECKOUT
-// ======================================
-
-document.getElementById("checkoutButton").addEventListener("click", () => {
-=======
 const checkoutButton = document.getElementById("checkoutButton");
 
 checkoutButton.addEventListener("click", async () => {
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 
     if (!cart.length) {
         showToast("Your cart is empty");
         return;
     }
 
-<<<<<<< HEAD
-    const orderId = "BR-" + Math.floor(1000 + Math.random() * 9000);
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
     const total = cart.reduce(
         (sum, item) => sum + item.price * item.quantity,
         0
     );
 
-<<<<<<< HEAD
-    const now = new Date();
-    const formattedTime = now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
-
-    const newOrder = {
-        id: orderId,
-        items: [...cart],
-        total,
-        time: formattedTime
-    };
-
-    savedOrders.unshift(newOrder);
-    saveOrdersToStorage();
-
-    cart = [];
-    updateCart();
-    cartOverlay.classList.remove("show");
-
-    openOrderModal(newOrder);
-});
-
-
-// ======================================
-// TOAST
-// ======================================
-
-=======
     checkoutButton.disabled = true;
     checkoutButton.innerHTML = `Placing Order...`;
 
@@ -1199,7 +857,6 @@ checkoutButton.addEventListener("click", async () => {
     }
 });
 
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 function showToast(message) {
     document.querySelector(".toast")?.remove();
 
@@ -1221,12 +878,6 @@ function showToast(message) {
     }, 2200);
 }
 
-<<<<<<< HEAD
-
-// ======================================
-// KEYBOARD SUPPORT
-// ======================================
-=======
 function checkForAdminUpdates() {
     if (USE_BACKEND) return;
 
@@ -1253,7 +904,6 @@ window.addEventListener("storage", checkForAdminUpdates);
 window.addEventListener("focus", checkForAdminUpdates);
 setInterval(checkForAdminUpdates, 2000);
 
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 
 document.addEventListener("keydown", event => {
 
@@ -1266,16 +916,7 @@ document.addEventListener("keydown", event => {
 });
 
 
-<<<<<<< HEAD
-// ======================================
-// INITIALIZE
-// ======================================
-
-renderFoods();
-renderPopular();
-=======
 fetchMenuFromBackend();
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 updateCart();
 updateOrdersUI();
 refreshIcons();
