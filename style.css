@@ -1,10 +1,4 @@
-<<<<<<< HEAD
-/* =========================
-   BITERUSH DESIGN SYSTEM
-========================= */
 
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 :root {
     --bg: #111318;
     --surface: #20232a;
@@ -71,14 +65,7 @@ img {
     stroke-width: 1.8;
 }
 
-<<<<<<< HEAD
 
-/* =========================
-   BACKGROUND
-========================= */
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 .background-glow {
     position: fixed;
     z-index: -1;
@@ -102,14 +89,6 @@ img {
     background: #ff5c00;
 }
 
-<<<<<<< HEAD
-
-/* =========================
-   GLASS EFFECT
-========================= */
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 .glass,
 .navbar,
 .floating-glass {
@@ -129,14 +108,6 @@ img {
     background: rgba(30, 30, 32, 0.82);
 }
 
-<<<<<<< HEAD
-
-/* =========================
-   NAVBAR
-========================= */
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 .navbar {
     position: sticky;
     top: 20px;
@@ -201,14 +172,6 @@ img {
     gap: 15px;
 }
 
-<<<<<<< HEAD
-
-/* =========================
-   SEARCH
-========================= */
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 .search-box {
     display: flex;
     align-items: center;
@@ -245,14 +208,6 @@ img {
     color: #8b8b95;
 }
 
-<<<<<<< HEAD
-
-/* =========================
-   MY ORDERS NAVBAR BUTTON
-========================= */
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 .orders-nav-button {
     position: relative;
     display: inline-flex;
@@ -290,16 +245,7 @@ img {
     color: #111318;
     font-size: 11px;
     font-weight: 800;
-}
-
-<<<<<<< HEAD
-
-/* =========================
-   CART BUTTON
-========================= */
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
+} 
 .cart-button {
     position: relative;
     display: grid;
@@ -336,14 +282,7 @@ img {
     font-weight: 700;
 }
 
-<<<<<<< HEAD
 
-/* =========================
-   MAIN LAYOUT
-========================= */
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 .container,
 .footer {
     width: calc(100% - 100px);
@@ -355,14 +294,7 @@ img {
     margin-top: 30px;
 }
 
-<<<<<<< HEAD
 
-/* =========================
-   HERO
-========================= */
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 .hero {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -424,14 +356,6 @@ img {
     line-height: 1.8;
 }
 
-<<<<<<< HEAD
-
-/* =========================
-   BUTTONS
-========================= */
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 .hero-buttons {
     display: flex;
     flex-wrap: wrap;
@@ -477,14 +401,7 @@ img {
     width: 17px;
 }
 
-<<<<<<< HEAD
 
-/* =========================
-   HERO INFO
-========================= */
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 .hero-info {
     display: flex;
     flex-wrap: wrap;
@@ -519,14 +436,6 @@ img {
     font-size: 12px;
 }
 
-<<<<<<< HEAD
-
-/* =========================
-   HERO IMAGE
-========================= */
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 .hero-visual {
     position: relative;
     display: flex;
@@ -562,14 +471,6 @@ img {
     pointer-events: none;
 }
 
-<<<<<<< HEAD
-
-/* =========================
-   FLOATING CARD
-========================= */
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 .floating-card {
     position: absolute;
     right: -10px;
@@ -620,14 +521,6 @@ img {
     pointer-events: none;
 }
 
-<<<<<<< HEAD
-
-/* =========================
-   SECTIONS
-========================= */
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 .section {
     margin-top: 75px;
 }
@@ -661,14 +554,7 @@ img {
     font-size: 14px;
 }
 
-<<<<<<< HEAD
 
-/* =========================
-   CATEGORIES
-========================= */
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 .category-list {
     display: grid;
     grid-template-columns: repeat(7, minmax(110px, 1fr));
@@ -711,14 +597,6 @@ img {
     color: var(--orange);
 }
 
-<<<<<<< HEAD
-
-/* =========================
-   VIEW ALL
-========================= */
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 .view-all {
     display: flex;
     align-items: center;
@@ -736,14 +614,6 @@ img {
     width: 16px;
 }
 
-<<<<<<< HEAD
-
-/* =========================
-   FOOD GRID
-========================= */
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 .food-grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -782,14 +652,6 @@ img {
     transform: scale(1.06);
 }
 
-<<<<<<< HEAD
-
-/* =========================
-   FOOD BADGE
-========================= */
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 .food-badge {
     position: absolute;
     top: 14px;
@@ -812,15 +674,6 @@ img {
     border-radius: 50%;
     background: var(--green);
 }
-
-<<<<<<< HEAD
-
-/* =========================
-   FOOD DETAILS
-========================= */
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 .food-details {
     padding: 20px;
 }
@@ -869,14 +722,6 @@ img {
     width: 19px;
 }
 
-<<<<<<< HEAD
-
-/* =========================
-   EMPTY SEARCH
-========================= */
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 .no-results {
     grid-column: 1 / -1;
     padding: 60px 20px;
@@ -891,14 +736,7 @@ img {
     color: white;
 }
 
-<<<<<<< HEAD
 
-/* =========================
-   HOW IT WORKS
-========================= */
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 .steps-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -947,14 +785,6 @@ img {
     line-height: 1.7;
 }
 
-<<<<<<< HEAD
-
-/* =========================
-   CTA
-========================= */
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 .cta-section {
     display: flex;
     align-items: center;
@@ -981,14 +811,6 @@ img {
     line-height: 1.7;
 }
 
-<<<<<<< HEAD
-
-/* =========================
-   FOOTER
-========================= */
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 .footer {
     display: flex;
     flex-direction: column;
@@ -1016,14 +838,6 @@ img {
     font-size: 12px;
 }
 
-<<<<<<< HEAD
-
-/* =========================
-   CART OVERLAY
-========================= */
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 .cart-overlay {
     position: fixed;
     inset: 0;
@@ -1042,14 +856,6 @@ img {
     visibility: visible;
 }
 
-<<<<<<< HEAD
-
-/* =========================
-   CART DRAWER
-========================= */
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 .cart-drawer {
     display: flex;
     flex-direction: column;
@@ -1067,12 +873,6 @@ img {
     transform: translateX(0);
 }
 
-<<<<<<< HEAD
-
-/* CART HEADER */
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 .cart-header {
     display: flex;
     align-items: center;
@@ -1102,12 +902,7 @@ img {
     background: rgba(249, 115, 22, 0.15);
 }
 
-<<<<<<< HEAD
 
-/* CART ITEMS */
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 .cart-items {
     flex: 1;
     overflow-y: auto;
@@ -1145,12 +940,7 @@ img {
     font-weight: 700;
 }
 
-<<<<<<< HEAD
 
-/* CART QUANTITY */
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 .quantity-controls {
     display: flex;
     align-items: center;
@@ -1182,12 +972,6 @@ img {
     font-size: 13px;
 }
 
-<<<<<<< HEAD
-
-/* EMPTY CART */
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 .empty-cart {
     display: flex;
     flex-direction: column;
@@ -1216,12 +1000,7 @@ img {
     font-size: 13px;
 }
 
-<<<<<<< HEAD
 
-/* CART FOOTER */
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 .cart-bottom {
     padding-top: 20px;
     border-top: 1px solid var(--border);
@@ -1254,14 +1033,6 @@ img {
     text-align: center;
 }
 
-<<<<<<< HEAD
-
-/* =========================
-   TOAST
-========================= */
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 .toast {
     position: fixed;
     left: 50%;
@@ -1284,14 +1055,6 @@ img {
     transform: translate(-50%, 0);
 }
 
-<<<<<<< HEAD
-
-/* =========================
-   FOOD DETAILS MODAL
-========================= */
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 .food-card {
     cursor: pointer;
 }
@@ -1335,12 +1098,6 @@ img {
     transform: translateY(0) scale(1);
 }
 
-<<<<<<< HEAD
-
-/* MODAL CLOSE BUTTON */
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 .food-modal-close {
     position: absolute;
     top: 14px;
@@ -1363,12 +1120,6 @@ img {
     background: rgba(249, 115, 22, 0.2);
 }
 
-<<<<<<< HEAD
-
-/* MODAL IMAGE */
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 .food-modal-image-wrap {
     position: relative;
     min-height: 360px;
@@ -1388,12 +1139,6 @@ img {
     left: 18px;
 }
 
-<<<<<<< HEAD
-
-/* MODAL CONTENT */
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 .food-modal-content {
     display: flex;
     flex-direction: column;
@@ -1421,12 +1166,7 @@ img {
     font-size: 14px;
 }
 
-<<<<<<< HEAD
 
-/* MODAL PRICE & QUANTITY */
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 .food-modal-bottom {
     display: flex;
     align-items: center;
@@ -1476,14 +1216,6 @@ img {
     cursor: pointer;
 }
 
-<<<<<<< HEAD
-
-/* =========================
-   ORDER CONFIRMATION & MY ORDERS MODAL
-========================= */
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 .order-modal-overlay {
     position: fixed;
     inset: 0;
@@ -1710,14 +1442,6 @@ img {
     border-radius: 16px;
 }
 
-<<<<<<< HEAD
-
-/* =========================
-   SAVED ORDERS LIST
-========================= */
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 .saved-orders-list {
     display: flex;
     flex-direction: column;
@@ -1809,14 +1533,6 @@ img {
     line-height: 1.6;
 }
 
-<<<<<<< HEAD
-
-/* =========================
-   FLOATING ACTIVE ORDER BAR
-========================= */
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 .floating-order-bar {
     position: fixed;
     right: 25px;
@@ -1875,14 +1591,7 @@ img {
     height: 15px;
 }
 
-<<<<<<< HEAD
 
-/* =========================
-   SCROLLBAR
-========================= */
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 ::-webkit-scrollbar {
     width: 7px;
 }
@@ -1900,14 +1609,7 @@ img {
     background: rgba(249, 115, 22, 0.5);
 }
 
-<<<<<<< HEAD
 
-/* =========================
-   TABLET
-========================= */
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 @media (max-width: 1100px) {
 
     .navbar {
@@ -1950,14 +1652,7 @@ img {
     }
 }
 
-<<<<<<< HEAD
 
-/* =========================
-   MOBILE
-========================= */
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 @media (max-width: 760px) {
 
     .navbar {
@@ -2207,11 +1902,6 @@ img {
     }
 
 
-<<<<<<< HEAD
-    /* MOBILE FOOD MODAL */
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
     .food-modal-overlay {
         padding: 12px;
     }
@@ -2240,14 +1930,6 @@ img {
     }
 }
 
-<<<<<<< HEAD
-
-/* =========================
-   SMALL MOBILE
-========================= */
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 @media (max-width: 400px) {
 
     .search-box {
@@ -2290,49 +1972,6 @@ img {
         font-size: 24px;
     }
 }
-
-<<<<<<< HEAD
-
-/* =========================
-   ACCESSIBILITY
-========================= */
-=======
-.food-card.unavailable {
-    opacity: 0.6;
-    cursor: not-allowed;
-}
-
-.food-card.unavailable:hover {
-    transform: none;
-    border-color: var(--border);
-    box-shadow: none;
-}
-
-.food-card.unavailable .food-image img {
-    filter: grayscale(65%);
-}
-
-.food-badge.sold-out-badge {
-    border-color: rgba(239, 68, 68, 0.4);
-    color: #fca5a5;
-}
-
-.veg-dot.out-dot {
-    background: #ef4444;
-}
-
-.add-button:disabled {
-    background: rgba(255, 255, 255, 0.12);
-    color: var(--muted);
-    cursor: not-allowed;
-    transform: none;
-}
-
-.add-button:disabled:hover {
-    background: rgba(255, 255, 255, 0.12);
-    transform: none;
-}
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 
 @media (prefers-reduced-motion: reduce) {
 
