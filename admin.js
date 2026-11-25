@@ -1,26 +1,10 @@
-<<<<<<< HEAD
-// ======================================
-// API CONFIGURATION (MATCHES SCRIPT.JS)
-// ======================================
-
-const API_BASE_URL = "http://127.0.0.1:5000/api";
-const USE_BACKEND = false; // Set to true when your teammate's Flask server is live
-=======
-const API_BASE_URL = "http://127.0.0.1:5000/api";
+const API_BASE_URL = "https://bit-rush.vercel.app";
 const USE_BACKEND = true; // Load and manage orders through the Flask API
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 
 const ORDERS_STORAGE_KEY = "biterush_orders";
 const MENU_STORAGE_KEY = "biterush_admin_menu";
 
 
-<<<<<<< HEAD
-// ======================================
-// DEFAULT MENU DATA
-// ======================================
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 const defaultMenu = [
     { id: 1, name: "Veg Sandwich", category: "Snacks", price: 60, description: "Toasted sandwich with fresh vegetables and cheese.", image: "assets/Veg Sandwich.jpg", available: true },
     { id: 2, name: "Cheese Sandwich", category: "Snacks", price: 70, description: "Grilled sandwich filled with delicious melted cheese.", image: "assets/Cheese Sandwich.jpg", available: true },
@@ -47,34 +31,16 @@ const ORDER_STATUSES = [
 ];
 
 
-<<<<<<< HEAD
-// ======================================
-// STATE
-// ======================================
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 let orders = [];
 let menuItems = JSON.parse(localStorage.getItem(MENU_STORAGE_KEY)) || [...defaultMenu];
 let selectedStatusFilter = "All";
 let pendingDeleteId = null;
 
-<<<<<<< HEAD
-// Seed localStorage on first run so student & admin share the exact same list
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 if (!localStorage.getItem(MENU_STORAGE_KEY)) {
     localStorage.setItem(MENU_STORAGE_KEY, JSON.stringify(menuItems));
 }
 
 
-<<<<<<< HEAD
-// ======================================
-// HELPERS
-// ======================================
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 function refreshIcons() {
     if (window.lucide) {
         lucide.createIcons();
@@ -113,13 +79,6 @@ function getStatusBadgeClass(status) {
 }
 
 
-<<<<<<< HEAD
-// ======================================
-// CUSTOM DROPDOWN CONTROLLER
-// ======================================
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 function closeAllCustomDropdowns(exceptDropdown = null) {
     document.querySelectorAll(".custom-dropdown.open").forEach(dropdown => {
         if (dropdown !== exceptDropdown) {
@@ -145,18 +104,10 @@ document.addEventListener("click", event => {
         const dropdown = item.closest(".custom-dropdown");
         const value = item.dataset.value;
 
-<<<<<<< HEAD
-        // Category dropdown inside Add/Edit modal
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
         if (dropdown.id === "categoryCustomDropdown") {
             setCategoryDropdownValue(value);
         }
 
-<<<<<<< HEAD
-        // Order status dropdown inside Order Card
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
         if (dropdown.dataset.orderId) {
             updateOrderStatus(dropdown.dataset.orderId, value);
         }
@@ -178,13 +129,6 @@ function setCategoryDropdownValue(value) {
 }
 
 
-<<<<<<< HEAD
-// ======================================
-// LOAD ORDERS & MENU
-// ======================================
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 async function loadOrders() {
     if (!USE_BACKEND) {
         orders = JSON.parse(localStorage.getItem(ORDERS_STORAGE_KEY)) || [];
@@ -234,13 +178,6 @@ async function loadMenu() {
 }
 
 
-<<<<<<< HEAD
-// ======================================
-// RENDER STATS
-// ======================================
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 function renderStats() {
     const active = orders.filter(o => o.status !== "Completed").length;
     const preparing = orders.filter(o => o.status === "Preparing").length;
@@ -254,13 +191,6 @@ function renderStats() {
 }
 
 
-<<<<<<< HEAD
-// ======================================
-// RENDER INCOMING ORDERS (WITH CUSTOM DROPDOWN)
-// ======================================
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 function renderOrders() {
     const grid = document.getElementById("adminOrdersGrid");
 
@@ -361,13 +291,6 @@ async function updateOrderStatus(orderId, newStatus) {
 }
 
 
-<<<<<<< HEAD
-// ======================================
-// RENDER MENU MANAGEMENT
-// ======================================
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 function saveMenuToLocal() {
     localStorage.setItem(MENU_STORAGE_KEY, JSON.stringify(menuItems));
 }
@@ -449,13 +372,6 @@ async function toggleFoodAvailability(foodId) {
 }
 
 
-<<<<<<< HEAD
-// ======================================
-// CUSTOM DELETE CONFIRMATION POPUP
-// ======================================
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 const adminDeleteModalOverlay = document.getElementById("adminDeleteModalOverlay");
 
 function openDeleteModal(foodId) {
@@ -515,13 +431,6 @@ document.getElementById("confirmDeleteBtn").addEventListener("click", async () =
 });
 
 
-<<<<<<< HEAD
-// ======================================
-// CUSTOM ADD / EDIT FOOD POPUP
-// ======================================
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 const adminFoodModalOverlay = document.getElementById("adminFoodModalOverlay");
 const adminFoodForm = document.getElementById("adminFoodForm");
 
@@ -635,13 +544,6 @@ adminFoodForm.addEventListener("submit", async event => {
 });
 
 
-<<<<<<< HEAD
-// ======================================
-// TABS, FILTERS & LIVE SYNC
-// ======================================
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 document.querySelectorAll(".admin-tab-btn").forEach(btn => {
     btn.addEventListener("click", () => {
         document.querySelectorAll(".admin-tab-btn").forEach(b => b.classList.remove("active"));
@@ -695,13 +597,6 @@ document.addEventListener("keydown", event => {
 });
 
 
-<<<<<<< HEAD
-// ======================================
-// INITIALIZE
-// ======================================
-
-=======
->>>>>>> 36467e6 (Complete BiteRush Phase 1 frontend, live order status sync, and Admin dashboard)
 loadOrders();
 loadMenu();
 refreshIcons();
